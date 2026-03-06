@@ -1,0 +1,43 @@
+# Compiled class files
+*.class
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# Logs
+*.log
+
+# NetBeans private project files
+nbproject/private/
+nbproject/private/private.xml
+nbproject/private/private.properties
+nbproject/private/config.properties
+
+# NetBeans build folders
+build/
+dist/
+nbbuild/
+nbdist/
+.nb-gradle/
+
+# Maven
+target/
+
+# Gradle
+.gradle/
+
+# Temporary files
+*.tmp
+*.swp
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Other IDEs
+.idea/
+*.iml
+.vscode/
