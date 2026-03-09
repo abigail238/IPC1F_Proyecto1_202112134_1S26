@@ -11,7 +11,6 @@ package com.mycompany.proyecto1;
 public class MenuPrincipal extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MenuPrincipal.class.getName());
-MenuPrincipal mPrincipal = new MenuPrincipal(); // objeto
     
     public MenuPrincipal() {
         initComponents();
@@ -192,8 +191,8 @@ MenuPrincipal mPrincipal = new MenuPrincipal(); // objeto
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         // TODO add your handling code here:
-        VentanaAgregar abrir = new  VentanaAgregar();
-        abrir.setVisible(true);
+       VentanaAgregar abrir = new VentanaAgregar();
+    abrir.setVisible(true);
         
     }//GEN-LAST:event_btnAgregarActionPerformed
 
@@ -216,7 +215,7 @@ MenuPrincipal mPrincipal = new MenuPrincipal(); // objeto
 
     private void btnDatosEstudianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDatosEstudianteActionPerformed
         // TODO add your handling code here:
-        String info= "Nombre: [}" + "carnet: " ;
+        String info= "Nombre: Lorena Abigail Arrecis Martinez " + "carnet:202112134 " + "Curso: IPC1" ;
         javax.swing.JOptionPane.showMessageDialog(this, info);
     }//GEN-LAST:event_btnDatosEstudianteActionPerformed
 
