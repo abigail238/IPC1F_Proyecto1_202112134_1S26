@@ -192,8 +192,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
             // TODO add your handling code here:
             //aqui creamos el objeto de una ventana 
-       VentanaAgregar abrir = new VentanaAgregar();
-       
+        VentanaAgregar abrir = new VentanaAgregar();
+   
        //ahora la vamos a hacer visible 
        abrir.setVisible(true);
        

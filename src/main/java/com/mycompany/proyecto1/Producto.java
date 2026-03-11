@@ -17,6 +17,8 @@ public class Producto {
     public double precio;
     public int stock;
     
+    // aqui estamos haciendo el constructor para inicializar el producto facilmente 
+    
     public Producto(String codigo, String nombre, String categoria, double precio,int stock ){
         this.codigo = codigo;
         this.nombre = nombre;
