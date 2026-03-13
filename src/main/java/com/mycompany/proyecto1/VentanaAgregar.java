@@ -19,8 +19,14 @@ public class VentanaAgregar extends JDialog {
    
     // método de la interfaz 
     private void initComponents(){
+        
 
     }
+    
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // TODO add your handling code here:
+        guardarProducto();
+    }   
    private void guardarProducto(){
       if(txtCodigo.getText().isEmpty() || 
           txtNombre.getText().isEmpty() ||
@@ -40,7 +46,7 @@ public class VentanaAgregar extends JDialog {
        int cantidad = Integer.parseInt(txtCantidad.getText());
        
        if(precio <= 0 || cantidad <=0){
-           JOptionPane.showConfirmDialog(this, "Precio y cantidad deben ser mayor a 0");
+          JOptionPane.showMessageDialog(this, "Precio y cantidad deben ser mayor a 0");
            return;
        }
        for(int i =0; i< Inventario.totalProductos; i++){
@@ -54,17 +60,12 @@ public class VentanaAgregar extends JDialog {
        
        //se va a crear un nuevo producto 
             Producto nuevo = new Producto(codigo, nombre, categoria, precio, cantidad);
-       nuevo.nombre = nombre;
-       nuevo.categoria = categoria;
-       nuevo.codigo = codigo;
-       nuevo.precio = precio;
-       nuevo.stock = cantidad;
        
        //aqui lo vamos a guardar en inventario
        Inventario.productos[Inventario.totalProductos]= nuevo;
       Inventario.totalProductos++;
        
-       JOptionPane.showInputDialog(this, "Producto agregado correctamente");
+       JOptionPane.showMessageDialog(this, "Producto agregado correctamente");
        
        
        

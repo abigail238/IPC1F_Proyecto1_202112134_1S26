@@ -1,6 +1,8 @@
 
 package com.mycompany.proyecto1;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -82,5 +84,73 @@ public class Reportes {
         
         }
     }
-    
+    public static void generarReporteVenta (){
+        
+        try{
+        
+            
+        LocalDateTime ahora = LocalDateTime.now();
+
+         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd_MM_yyyy_HH_mm_ss");
+
+        String fecha = ahora.format(formato);
+
+        String nombreArchivo= fecha + "_venta.html";
+        
+        FileWriter archivo = new FileWriter(nombreArchivo);
+        
+        archivo.write("<html>");
+        archivo.write("<head>");
+        archivo.write("<title>Reporte de ventas</title>");
+        archivo.write("</head>");
+        archivo.write("<body>");
+        archivo.write("<h1> Reporte de venta</h1>");
+        
+        //tabla html 
+        archivo.write("<tabla border ='1'>");
+        
+        archivo.write("<tr>");
+        archivo.write("<th>Codigo</th>");
+        archivo.write("<th>Cantidad</th>");
+        archivo.write("<th>Total</th>");
+        archivo.write("<th>Fecha</th>");
+        archivo.write("</tr>");
+        
+        //abrimos el archivo ventas.txt para leer las ventas 
+            BufferedReader lector= new BufferedReader(new FileReader("ventas.txt"));
+            
+            String linea;
+            
+            //leemos cada linea del archivo ventras.txt
+            while((linea = lector.readLine()) != null){
+                
+                //separamos los datos usando la coma 
+                String [] datos = linea.split(",");
+                
+                //creamos una fila de la tabla html
+                archivo.write("<tr>");
+                archivo.write("<td>" + datos[0] + "</td>");
+                archivo.write("<td>" + datos[1] + "</td>");
+                archivo.write("<td>" + datos[2] + "</td>");
+                archivo.write("<td>" + datos[3] + "</td>");
+                archivo.write("</tr>");
+                
+                
+            }
+            lector.close();
+            
+            //cerramos la tabla html 
+            archivo.write("</table>");
+            
+            archivo.write("</body>");
+            
+            archivo.write("</html>");
+            
+            archivo.close();
+        }catch(IOException e){
+            
+        }
+            System.out.println("Erros al generar el reporte de ventas");
+        }
+            
 }
