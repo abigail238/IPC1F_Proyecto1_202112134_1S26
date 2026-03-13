@@ -4,6 +4,8 @@
  */
 package com.mycompany.proyecto1;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Lorena
@@ -204,14 +206,28 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         // TODO add your handling code here:
+         VentanaEliminar ventana = new VentanaEliminar();
+
+    ventana.setVisible(true);
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVentaActionPerformed
         // TODO add your handling code here:
+        
+        //aqui vamos a crear la ventana de ventas
+        VentanaVentas ventana = new VentanaVentas();
+        
+        //mostramos la ventana
+        
+         ventana.setVisible(true);
+
     }//GEN-LAST:event_btnVentaActionPerformed
 
     private void btnReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReporteActionPerformed
         // TODO add your handling code here:
+        
+        Reportes.generarReportesSrock();
+        JOptionPane.showInternalMessageDialog(this, "Reporte generado correctamente");
     }//GEN-LAST:event_btnReporteActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
